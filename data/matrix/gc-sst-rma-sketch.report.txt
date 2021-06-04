@@ -1,0 +1,207 @@
+#%affymetrix-algorithm-param-apt-engine=ProbesetSummarizeEngine
+#%affymetrix-algorithm-param-apt-program-name=apt-probeset-summarize
+#%affymetrix-algorithm-param-apt-command-line=/opt/apt_2.11.3_linux_64_bit_x86_binaries/bin/apt-probeset-summarize -a gc-sst-rma-sketch -p /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/platform_files/GPL20258/MTA-1_0.r1.pgf -c /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/platform_files/GPL20258/MTA-1_0.r1.clf -b /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/platform_files/GPL20258/MTA-1_0.r1.bgp -m /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/platform_files/GPL20258/MTA-1_0.r1.Psrs.mps -o /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/matrix /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083616_43_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083617_43_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083618_44_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083619_44_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083620_45_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083621_45_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083622_48_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083623_48_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083624_49_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083625_49_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083626_50_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083627_50_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083628_51_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083629_51_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083630_55_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083631_55_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083632_56_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083633_60_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083634_61_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083635_61_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083636_62_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083637_62_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083638_63_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083639_63_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083640_64_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083641_64_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083642_65_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083643_65_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083644_66_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083645_66_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083646_68_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083647_68_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083648_69_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083649_69_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083650_70_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083651_70_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083652_71_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083653_71_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083654_73_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083655_73_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083656_75_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083657_75_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083658_79_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083659_79_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083660_80_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083661_80_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083662_81_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083663_81_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083664_83_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083665_83_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083666_84_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083667_84_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083668_85_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083669_85_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083670_87_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083671_87_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083672_89_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083673_89_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083674_90_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083675_90_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083676_92a_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083677_95_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083678_95_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083679_96_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083680_97_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083681_97_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083682_98_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083683_98_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083684_99_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083685_99_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083686_100_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083687_100_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083688_101_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083689_101_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083690_103_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083691_103_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083692_C57_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083693_C57_HFD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083694_DBA_CD_scWAT.CEL /work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/raw/GSM2083695_DBA_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-exec-guid=46441e57-eb73-4777-2b22-f04c18435d29
+#%affymetrix-algorithm-param-apt-analysis-guid=394b0ed8-8878-45a2-db88-8ff95d6b051f
+#%affymetrix-algorithm-param-apt-time-str=Mon May  3 16:17:11 2021
+#%affymetrix-algorithm-param-apt-version=1.20.0 svn://svn.affymetrix.com/apt/projects/apt/branches/APT_1_20_0_BRANCH/sdk/release@58265
+#%affymetrix-algorithm-param-apt-cvs-id=svn://svn.affymetrix.com/apt/projects/apt/branches/APT_1_20_0_BRANCH/sdk/release@58265
+#%affymetrix-algorithm-param-apt-free-mem=27827615334
+#%affymetrix-algorithm-param-apt-opt-do-ps-names=false
+#%affymetrix-algorithm-param-apt-opt-chip-type=MTA-1_0
+#%affymetrix-algorithm-param-apt-opt-probe-count=6892960
+#%affymetrix-algorithm-param-apt-opt-force=false
+#%affymetrix-algorithm-param-apt-opt-precision=5
+#%affymetrix-algorithm-param-apt-opt-out-dir=/work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/matrix
+#%affymetrix-algorithm-param-apt-opt-cc-expr-chp-out-dir=
+#%affymetrix-algorithm-param-apt-opt-cc-md-chp-out-dir=
+#%affymetrix-algorithm-param-apt-opt-xda-chp-out-dir=
+#%affymetrix-algorithm-param-apt-opt-cdf-file=
+#%affymetrix-algorithm-param-apt-opt-spf-file=
+#%affymetrix-algorithm-param-apt-opt-pgf-file=MTA-1_0.r1.pgf
+#%affymetrix-algorithm-param-apt-opt-clf-file=MTA-1_0.r1.clf
+#%affymetrix-algorithm-param-apt-opt-bgp-file=MTA-1_0.r1.bgp
+#%affymetrix-algorithm-param-apt-opt-ps-list-file=
+#%affymetrix-algorithm-param-apt-opt-meta-ps-file=MTA-1_0.r1.Psrs.mps
+#%affymetrix-algorithm-param-apt-opt-qc-groups-file=
+#%affymetrix-algorithm-param-apt-opt-kill-list=
+#%affymetrix-algorithm-param-apt-opt-temp-dir=/work/bxd-fasted-gene-expression-scwat-microarray-r5652/data/matrix/temp
+#%affymetrix-algorithm-param-apt-opt-use-disk=true
+#%affymetrix-algorithm-param-apt-opt-diskCache=50
+#%affymetrix-algorithm-param-apt-opt-cel-count=80
+#%affymetrix-algorithm-param-apt-opt-cel-1=GSM2083616_43_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-2=GSM2083617_43_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-3=GSM2083618_44_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-4=GSM2083619_44_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-5=GSM2083620_45_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-6=GSM2083621_45_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-7=GSM2083622_48_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-8=GSM2083623_48_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-9=GSM2083624_49_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-10=GSM2083625_49_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-11=GSM2083626_50_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-12=GSM2083627_50_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-13=GSM2083628_51_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-14=GSM2083629_51_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-15=GSM2083630_55_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-16=GSM2083631_55_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-17=GSM2083632_56_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-18=GSM2083633_60_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-19=GSM2083634_61_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-20=GSM2083635_61_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-21=GSM2083636_62_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-22=GSM2083637_62_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-23=GSM2083638_63_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-24=GSM2083639_63_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-25=GSM2083640_64_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-26=GSM2083641_64_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-27=GSM2083642_65_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-28=GSM2083643_65_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-29=GSM2083644_66_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-30=GSM2083645_66_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-31=GSM2083646_68_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-32=GSM2083647_68_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-33=GSM2083648_69_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-34=GSM2083649_69_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-35=GSM2083650_70_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-36=GSM2083651_70_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-37=GSM2083652_71_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-38=GSM2083653_71_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-39=GSM2083654_73_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-40=GSM2083655_73_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-41=GSM2083656_75_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-42=GSM2083657_75_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-43=GSM2083658_79_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-44=GSM2083659_79_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-45=GSM2083660_80_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-46=GSM2083661_80_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-47=GSM2083662_81_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-48=GSM2083663_81_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-49=GSM2083664_83_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-50=GSM2083665_83_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-51=GSM2083666_84_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-52=GSM2083667_84_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-53=GSM2083668_85_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-54=GSM2083669_85_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-55=GSM2083670_87_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-56=GSM2083671_87_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-57=GSM2083672_89_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-58=GSM2083673_89_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-59=GSM2083674_90_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-60=GSM2083675_90_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-61=GSM2083676_92a_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-62=GSM2083677_95_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-63=GSM2083678_95_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-64=GSM2083679_96_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-65=GSM2083680_97_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-66=GSM2083681_97_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-67=GSM2083682_98_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-68=GSM2083683_98_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-69=GSM2083684_99_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-70=GSM2083685_99_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-71=GSM2083686_100_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-72=GSM2083687_100_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-73=GSM2083688_101_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-74=GSM2083689_101_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-75=GSM2083690_103_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-76=GSM2083691_103_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-77=GSM2083692_C57_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-78=GSM2083693_C57_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-79=GSM2083694_DBA_CD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-cel-80=GSM2083695_DBA_HFD_scWAT.CEL
+#%affymetrix-algorithm-param-apt-opt-analysis-name=gc-sst-rma-sketch
+#%affymetrix-algorithm-param-apt-opt-set-analysis-name=
+#%affymetrix-algorithm-param-apt-opt-analysis-spec=gc-correction.algo_rev=4.cel_out=false,scale-intensities.floor=1.low=20.high=50000.ceiling=1000000.low_pct=0.02.high_pct=0.98.gain_lock_pct=0.0.cel_out=false,rma-bg,quant-norm.sketch=-1.bioc=true.lowprecision=false.usepm=true.target=0.doavg=false.subsetmd5=3375972bd2d28ed520ed3dc5aadb42ef,pm-only,med-polish.FixFeatureEffect=false.UseInputModel=false.FitFeatureResponse=true.expon=false.attenuate=true.l=0.005.h=-1,expr.genotype=false.strand=false.allele-a=false
+#%affymetrix-algorithm-param-apt-opt-feat-effect-file=
+#%affymetrix-algorithm-param-apt-opt-target-sketch-file=
+#%affymetrix-algorithm-param-apt-opt-do-residuals=false
+#%affymetrix-algorithm-param-apt-opt-do-feature-effects=false
+#%affymetrix-algorithm-param-apt-opt-write-sketch=false
+#%affymetrix-algorithm-param-apt-opt-reference-profile-file=
+#%affymetrix-algorithm-param-apt-opt-write-profile=false
+#%affymetrix-algorithm-param-quantification-name=med-polish
+#%affymetrix-algorithm-param-quantification-version=1.0
+#%affymetrix-algorithm-param-quantification-scale=log2
+#%affymetrix-algorithm-param-quantification-type=signal
+#%guid=54e0bcd0-e202-49aa-7c7f-da933c60c537
+cel_files	bgrd_mean	pm_mean	all_probeset_probesets	all_probeset_atoms	all_probeset_mean	all_probeset_stdev	all_probeset_mad_residual_mean	all_probeset_mad_residual_stdev	all_probeset_rle_mean	all_probeset_rle_stdev
+GSM2083616_43_CD_scWAT.CEL	125.397214	316.065880	72688	4942912	7.004343	2.689049	0.583474	0.207314	0.306860	0.345587
+GSM2083617_43_HFD_scWAT.CEL	159.958154	334.768418	72688	4942912	6.917318	2.703597	0.557400	0.203418	0.240233	0.280226
+GSM2083618_44_CD_scWAT.CEL	141.027563	358.867926	72688	4942912	6.968644	2.698401	0.527811	0.195208	0.237891	0.276631
+GSM2083619_44_HFD_scWAT.CEL	168.470047	381.488746	72688	4942912	6.923554	2.671338	0.491914	0.192252	0.233629	0.289395
+GSM2083620_45_CD_scWAT.CEL	125.362864	323.482379	72688	4942912	6.925797	2.732410	0.555291	0.205674	0.308707	0.374447
+GSM2083621_45_HFD_scWAT.CEL	164.763206	413.738512	72688	4942912	6.885768	2.646117	0.472388	0.177368	0.214827	0.246611
+GSM2083622_48_CD_scWAT.CEL	126.918668	303.045437	72688	4942912	6.986810	2.695876	0.565405	0.206706	0.261574	0.297941
+GSM2083623_48_HFD_scWAT.CEL	153.092132	346.254500	72688	4942912	6.903556	2.668788	0.515953	0.199309	0.215443	0.251531
+GSM2083624_49_CD_scWAT.CEL	135.709497	420.757429	72688	4942912	6.977537	2.716307	0.511290	0.185046	0.264306	0.355274
+GSM2083625_49_HFD_scWAT.CEL	130.149324	386.462961	72688	4942912	6.919470	2.689850	0.509815	0.186138	0.256805	0.332846
+GSM2083626_50_CD_scWAT.CEL	147.070767	351.453953	72688	4942912	6.951882	2.689997	0.515463	0.193299	0.227922	0.272860
+GSM2083627_50_HFD_scWAT.CEL	157.364044	400.860268	72688	4942912	6.903209	2.682442	0.481700	0.188031	0.198720	0.244090
+GSM2083628_51_CD_scWAT.CEL	124.200437	314.862381	72688	4942912	6.963578	2.749813	0.560097	0.205781	0.302529	0.339088
+GSM2083629_51_HFD_scWAT.CEL	156.777430	338.010734	72688	4942912	6.918252	2.654084	0.544008	0.200606	0.226512	0.270022
+GSM2083630_55_CD_scWAT.CEL	100.392020	234.206933	72688	4942912	6.979008	2.628151	0.680415	0.248814	0.329411	0.415874
+GSM2083631_55_HFD_scWAT.CEL	148.399280	353.232379	72688	4942912	6.886292	2.663445	0.535626	0.209857	0.261116	0.314596
+GSM2083632_56_CD_scWAT.CEL	136.741663	327.392162	72688	4942912	6.957132	2.717664	0.546346	0.196019	0.275267	0.339414
+GSM2083633_60_CD_scWAT.CEL	121.369238	323.614399	72688	4942912	6.965523	2.746611	0.536466	0.200197	0.286866	0.367946
+GSM2083634_61_CD_scWAT.CEL	139.954967	279.730725	72688	4942912	6.994327	2.722437	0.614302	0.220336	0.314094	0.359289
+GSM2083635_61_HFD_scWAT.CEL	128.848551	268.293330	72688	4942912	6.971429	2.677747	0.596184	0.219916	0.241658	0.281594
+GSM2083636_62_CD_scWAT.CEL	131.548250	229.183770	72688	4942912	7.025270	2.726281	0.699403	0.233412	0.362666	0.405301
+GSM2083637_62_HFD_scWAT.CEL	137.864664	321.075276	72688	4942912	6.915609	2.705373	0.544894	0.205518	0.215358	0.259349
+GSM2083638_63_CD_scWAT.CEL	154.842944	417.873089	72688	4942912	6.905696	2.667108	0.486880	0.185641	0.224467	0.265395
+GSM2083639_63_HFD_scWAT.CEL	137.116036	229.806048	72688	4942912	6.981890	2.598523	0.734137	0.244904	0.381031	0.411784
+GSM2083640_64_CD_scWAT.CEL	146.665585	352.545589	72688	4942912	6.935084	2.652093	0.502624	0.192746	0.208309	0.237563
+GSM2083641_64_HFD_scWAT.CEL	137.983415	303.793001	72688	4942912	6.902030	2.655458	0.575951	0.214134	0.224969	0.257210
+GSM2083642_65_CD_scWAT.CEL	146.170749	394.205253	72688	4942912	6.905518	2.671807	0.483763	0.186302	0.216913	0.249258
+GSM2083643_65_HFD_scWAT.CEL	130.717523	359.330013	72688	4942912	6.810869	2.653485	0.559435	0.201371	0.306064	0.342464
+GSM2083644_66_CD_scWAT.CEL	112.205454	242.830646	72688	4942912	6.966674	2.585603	0.728641	0.242836	0.357137	0.369108
+GSM2083645_66_HFD_scWAT.CEL	136.882547	351.627281	72688	4942912	6.850466	2.660275	0.541945	0.213292	0.282831	0.329932
+GSM2083646_68_CD_scWAT.CEL	134.780381	364.040257	72688	4942912	6.930965	2.685634	0.501916	0.185858	0.225317	0.264324
+GSM2083647_68_HFD_scWAT.CEL	122.958272	330.792436	72688	4942912	6.920656	2.671750	0.544441	0.198624	0.243894	0.291906
+GSM2083648_69_CD_scWAT.CEL	163.652718	494.664565	72688	4942912	6.823312	2.693262	0.459964	0.171368	0.278482	0.326614
+GSM2083649_69_HFD_scWAT.CEL	128.566842	337.370179	72688	4942912	6.881793	2.700480	0.543561	0.201673	0.278659	0.335013
+GSM2083650_70_CD_scWAT.CEL	145.116036	337.766176	72688	4942912	6.890088	2.677197	0.523855	0.201397	0.210516	0.262522
+GSM2083651_70_HFD_scWAT.CEL	135.506935	345.705170	72688	4942912	6.856677	2.697470	0.523682	0.204322	0.272239	0.323314
+GSM2083652_71_CD_scWAT.CEL	128.265832	295.283787	72688	4942912	7.002728	2.664414	0.558740	0.202791	0.257497	0.279349
+GSM2083653_71_HFD_scWAT.CEL	113.183675	342.701879	72688	4942912	6.919144	2.686189	0.520053	0.194401	0.257263	0.313507
+GSM2083654_73_CD_scWAT.CEL	162.253202	344.721535	72688	4942912	7.015126	2.616339	0.585588	0.206499	0.325640	0.326662
+GSM2083655_73_HFD_scWAT.CEL	171.024317	387.841770	72688	4942912	6.903342	2.643015	0.503356	0.199673	0.242024	0.331792
+GSM2083656_75_CD_scWAT.CEL	156.814555	398.499685	72688	4942912	6.956188	2.680267	0.497040	0.183144	0.230860	0.271709
+GSM2083657_75_HFD_scWAT.CEL	163.454288	348.784421	72688	4942912	6.967331	2.677881	0.516702	0.206008	0.237348	0.332608
+GSM2083658_79_CD_scWAT.CEL	121.640146	235.424003	72688	4942912	6.962907	2.686248	0.653360	0.229852	0.248204	0.282562
+GSM2083659_79_HFD_scWAT.CEL	179.920026	343.543033	72688	4942912	6.960852	2.713310	0.541346	0.204780	0.270704	0.368511
+GSM2083660_80_CD_scWAT.CEL	111.755120	235.435293	72688	4942912	6.962070	2.661619	0.660706	0.247594	0.265766	0.328927
+GSM2083661_80_HFD_scWAT.CEL	171.855693	335.967539	72688	4942912	6.893677	2.673323	0.540723	0.201470	0.231235	0.271638
+GSM2083662_81_CD_scWAT.CEL	143.294930	386.126180	72688	4942912	6.926842	2.665848	0.487451	0.189516	0.239814	0.288640
+GSM2083663_81_HFD_scWAT.CEL	152.481143	328.718948	72688	4942912	6.979918	2.674366	0.546183	0.212496	0.257455	0.327751
+GSM2083664_83_CD_scWAT.CEL	140.880423	314.587160	72688	4942912	6.971160	2.725538	0.564604	0.200582	0.278503	0.316374
+GSM2083665_83_HFD_scWAT.CEL	155.990084	415.557244	72688	4942912	6.909568	2.725232	0.491208	0.181727	0.266168	0.321567
+GSM2083666_84_CD_scWAT.CEL	124.240571	325.180599	72688	4942912	6.919315	2.704217	0.533651	0.198573	0.234251	0.265442
+GSM2083667_84_HFD_scWAT.CEL	159.513250	367.999275	72688	4942912	6.902184	2.725503	0.519329	0.195021	0.232574	0.260664
+GSM2083668_85_CD_scWAT.CEL	131.924216	389.505667	72688	4942912	6.926653	2.694224	0.500761	0.184079	0.232681	0.261854
+GSM2083669_85_HFD_scWAT.CEL	157.768990	396.493890	72688	4942912	6.826986	2.682686	0.513326	0.185073	0.284774	0.314151
+GSM2083670_87_CD_scWAT.CEL	149.609160	307.890903	72688	4942912	7.006380	2.682340	0.597566	0.209339	0.341580	0.378040
+GSM2083671_87_HFD_scWAT.CEL	178.278286	401.632694	72688	4942912	6.925045	2.648470	0.498292	0.191973	0.216307	0.271609
+GSM2083672_89_CD_scWAT.CEL	126.687068	300.517041	72688	4942912	6.952355	2.683330	0.529284	0.205192	0.206696	0.242070
+GSM2083673_89_HFD_scWAT.CEL	158.883964	324.461662	72688	4942912	6.951388	2.650735	0.565821	0.212272	0.276190	0.321807
+GSM2083674_90_CD_scWAT.CEL	131.567727	305.253471	72688	4942912	6.914133	2.690442	0.534827	0.209355	0.214722	0.257838
+GSM2083675_90_HFD_scWAT.CEL	147.111787	340.662236	72688	4942912	6.948318	2.676283	0.531434	0.200802	0.201086	0.239932
+GSM2083676_92a_CD_scWAT.CEL	125.381278	389.314004	72688	4942912	6.854319	2.675718	0.514983	0.191126	0.279279	0.305805
+GSM2083677_95_CD_scWAT.CEL	133.746090	360.454649	72688	4942912	6.871854	2.709478	0.500452	0.195174	0.252468	0.295339
+GSM2083678_95_HFD_scWAT.CEL	133.207401	291.092022	72688	4942912	6.864107	2.643389	0.599851	0.230158	0.274581	0.318480
+GSM2083679_96_CD_scWAT.CEL	109.291094	242.735455	72688	4942912	6.942301	2.662429	0.638011	0.255837	0.294090	0.474235
+GSM2083680_97_CD_scWAT.CEL	123.450688	335.162822	72688	4942912	6.917653	2.719989	0.506715	0.196553	0.221754	0.242217
+GSM2083681_97_HFD_scWAT.CEL	166.420705	365.557510	72688	4942912	6.902054	2.699021	0.507846	0.192105	0.199453	0.230049
+GSM2083682_98_CD_scWAT.CEL	139.072419	392.827193	72688	4942912	6.877667	2.726433	0.488868	0.192338	0.241269	0.286359
+GSM2083683_98_HFD_scWAT.CEL	148.337957	379.913331	72688	4942912	6.862377	2.706043	0.487457	0.192286	0.236700	0.260264
+GSM2083684_99_CD_scWAT.CEL	150.707018	319.960966	72688	4942912	6.985828	2.631549	0.552269	0.197103	0.257514	0.274600
+GSM2083685_99_HFD_scWAT.CEL	144.777607	292.297289	72688	4942912	6.915932	2.680609	0.582973	0.217981	0.234992	0.271473
+GSM2083686_100_CD_scWAT.CEL	165.140707	409.062540	72688	4942912	6.958767	2.670050	0.484504	0.182890	0.236811	0.290434
+GSM2083687_100_HFD_scWAT.CEL	152.608924	285.420810	72688	4942912	6.940280	2.645500	0.605828	0.233175	0.285838	0.323869
+GSM2083688_101_CD_scWAT.CEL	138.299062	399.931400	72688	4942912	6.889442	2.688749	0.502197	0.180724	0.251706	0.280667
+GSM2083689_101_HFD_scWAT.CEL	181.902733	421.753102	72688	4942912	6.921537	2.676056	0.464531	0.174408	0.204449	0.238342
+GSM2083690_103_CD_scWAT.CEL	129.546893	349.669973	72688	4942912	6.965457	2.680046	0.510925	0.186448	0.246001	0.273010
+GSM2083691_103_HFD_scWAT.CEL	147.140943	368.695453	72688	4942912	6.909226	2.662422	0.518265	0.192515	0.226297	0.277687
+GSM2083692_C57_CD_scWAT.CEL	161.550139	273.495009	72688	4942912	7.077892	2.703081	0.667241	0.219634	0.418522	0.441333
+GSM2083693_C57_HFD_scWAT.CEL	86.502567	323.594333	72688	4942912	6.990835	2.716902	0.594440	0.213324	0.334032	0.422161
+GSM2083694_DBA_CD_scWAT.CEL	147.380334	364.738349	72688	4942912	6.924154	2.680547	0.509894	0.192047	0.212982	0.265245
+GSM2083695_DBA_HFD_scWAT.CEL	150.409018	303.914971	72688	4942912	6.900878	2.647580	0.599334	0.235657	0.291598	0.347659

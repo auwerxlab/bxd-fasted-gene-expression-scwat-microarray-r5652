@@ -1,0 +1,1 @@
+Intensities were processed using the apt-probeset-summarize script from the Array Power Tool suite (version 2.11.3) with the gc-sst-rma-sketch standard method.

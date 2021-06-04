@@ -1,0 +1,208 @@
+---
+title: "Generate expression matrix"
+author: "Alexis Rapin"
+date: "`r Sys.Date()`"
+output:
+  html_document:
+    toc: true
+    toc_depth: 3
+    df_print: paged
+---
+```{r knitr, echo=F}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+In this notebook, microarray assay data are processed into expression matrices using the Array Power Tool (APT) suite. Raw microarray intensities CEL files are downloaded from GEO.
+
+## Set environment and variables
+
+```{r environment_setup, eval=T}
+
+# Load required packages
+suppressMessages(library(here))
+suppressMessages(library(tidyverse))
+suppressMessages(library(GEOquery)); packageVersion("GEOquery")
+suppressMessages(library(affyio)); packageVersion("affyio")
+
+# Set microarray run ID
+run.id <- "R5652"
+
+# Set the metadata file url based on GitLab v4 API (also specify the commit ID!)
+run.metadata.url <- "https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-knowledge-base/repository/files/data%2Fruns%2Fmicroarray_runs.txt/raw?ref=5709a4b7"
+
+# Source project's library
+source(here("lib/lib.R"))
+```
+
+## Retrieve microarray run `r run.id` metadata from the study knowledge base
+
+The run metadata are stored in the study knowledge base in Renku and a private access GitLab token is required to download it using `wget`.
+
+Required: Store a valid private access GitLab token in `/tmp/gitlab_token.txt` (e.g. ``$ echo '< gitlab_token >' > /tmp/gitlab_token.txt``)
+
+```{r download_metadata, eval=F}
+system(paste0("wget",
+             " --header='PRIVATE-TOKEN:", readLines("/tmp/gitlab_token.txt"), "'",
+             " '", run.metadata.url, "'",
+             " -O ", here('data/microarray_runs.txt')))
+```
+```{r, eval=T}
+read.table(here("data/microarray_runs.txt"), sep ="\t", header = 1) %>%
+  filter(run_id == run.id) %>%
+  gather
+```
+
+Also download the run samples metadata
+```{r download_samples_metadata, eval=F}
+sample.metdata.url <- read.table(here("data/microarray_runs.txt"), sep ="\t", header = 1) %>%
+  filter(run_id == run.id) %>%
+  select(run_samples_source_private)
+system(paste0("wget",
+             " --header='PRIVATE-TOKEN:", readLines("/tmp/gitlab_token.txt"), "'",
+             " '", sample.metdata.url, "'",
+             " -O ", here('data/run_samples.txt')))
+```
+
+## Download microarray platform files needed to compute expression values
+
+```{r list_platform_files_locations, eval=T}
+# Show support files locations
+read.table(here("data/microarray_runs.txt"), sep ="\t", header = 1) %>%
+      filter(run_id == run.id) %>%
+  dplyr::select(platform_name, platform_id, platform_support_files_misc) %>%
+  unique %>%
+  gather
+```
+
+Download manufacturer files.
+
+```{r, download_platform_files, eval=F}
+platform.id <- read.table(here("data/microarray_runs.txt"), sep ="\t", header = 1) %>%
+      filter(run_id == run.id) %>%
+  select(platform_id)
+
+dir.create(here("data/platform_files"))
+dir.create(here("data/platform_files", platform.id))
+system(paste0("wget -r --no-parent -e robots=off -l1 -nd -A '.zip' https://media.affymetrix.com/analysis/downloads/lf/xta/MTA-1_0/ -P ", here("data/platform_files", platform.id)))
+```
+
+## Download expression data
+Download CEL files from GEO.
+
+```{r, download_data, eval=F}
+# Dowload and extract raw data from GEO
+
+read.table(here("data/microarray_runs.txt"), sep ="\t", header = 1) %>%
+      filter(run_id == run.id) %>%
+  select(data_source_public_accession) %>%
+  {
+  getGEOSuppFiles(GEO = .,
+                  makeDirectory = FALSE,
+                  baseDir = here("data"))
+
+untar(tarfile = here("data", paste0(., "_RAW.tar")),
+      exdir = here("data", "raw"))
+
+file.remove(here("data", paste0(., "_RAW.tar")))
+}
+```
+
+## Compute expression values
+
+Compute expression values from CEL files using ``apt-probeset-summarize`` with the ``gc-sst-rma-sketch`` standard method (gc-correction,scale-intensities,rma-bg,quant-norm.sketch=-1.usepm=true.bioc=true,pm-only,med-polish).
+
+This assumes that:
+- CEL files were compressed with gzip (.gz)
+- Platform files were compressed with zip (.zip) or gzip (.gz)
+
+```{r, eval=F, echo=F}
+platform.id <- read.table(here("data/microarray_runs.txt"), sep ="\t", header = 1) %>%
+      filter(run_id == run.id) %>%
+  select(platform_id)
+```
+```{r, compute_expression_values, eval=F}
+# Retrieve, extract and return the names of the required platform files
+platform.files <- get.platform.files(here("data/platform_files",
+                                          platform.id),
+                                     c("pgf", "clf", "bgp", "mps"))
+
+# Retrieve CEL files
+system(paste0('cd ', here(),
+                  ' && git lfs pull --include="data/raw/*.CEL*"',
+                  ' && gunzip -k data/raw/*.CEL.gz'))
+
+# Create the output directory
+dir.create(here("data/matrix"))
+
+# Process run data with the apt-probeset-summarize tool
+system(paste0("/opt/apt_2.11.3_linux_64_bit_x86_binaries/bin/apt-probeset-summarize",
+              " -a gc-sst-rma-sketch",
+              " -p ", platform.files[["pgf"]],
+              " -c ", platform.files[["clf"]],
+              " -b ", platform.files[["bgp"]],
+              " -m ", platform.files[["mps"]],
+              " -o ", here("data/matrix"),
+              " ", here("data/raw/*.CEL")
+              ))
+
+writeLines("Intensities were processed using the apt-probeset-summarize script from the Array Power Tool suite (version 2.11.3) with the gc-sst-rma-sketch standard method.",
+              file(here("data/matrix/gc-sst-rma-sketch.method_description.txt")))
+```
+
+## Verify that expression value matrix has corresponding metadata
+
+Create a table of available samples in expression matrix versus metadata table.
+```{r, check_matrix_metadata, eval=F}
+sample.qc.table <- read.table(here("data/matrix", "gc-sst-rma-sketch.summary.txt"),
+                header = 1) %>%
+  select(-probeset_id) %>%
+  names %>%
+  {data.frame(Sample.name = .)} %>%
+  mutate(data = "available") %>%
+  full_join(read.table(here("data/run_samples.txt"),
+                              header = 1, sep = "\t") %>%
+  select(Sample.name) %>%
+  mutate(metadata = "available"),
+  by = "Sample.name") %>%
+  mutate(across(c(data, metadata),
+                function(x){
+                  return(factor(x, levels = c(unique(x), "not available")))
+                  })) %>%
+  select(data, metadata)
+
+saveRDS(sample.qc.table, here("data/sample_qc_table.txt"))
+```
+```{r, eval=T, echo = F}
+sample.qc.table <- readRDS(here("data/sample_qc_table.txt"))
+```
+```{r, eval=T, echo = T}
+table(sample.qc.table)
+```
+
+## Extract dates from CEL files.
+
+```{r, get_assay_dates, eval=F}
+list.files(here("data/raw"), pattern = ".CEL", full.names = T) %>%
+  {
+    cel.fps <- .
+    get.celfile.dates(cel.fps) %>%
+      data.frame(assay_date = .,
+               `CEL file` = basename(cel.fps) %>%
+                 str_remove(".gz$")) %>%
+      write.table(here("data/assay_dates.txt"), sep = "\t", quote = T, row.names = F)
+    }
+```
+
+Summarize assay dates.
+
+```{r, summarize_assay_dates, eval=T}
+read.table(here("data/assay_dates.txt"), header = 1) %>%
+  group_by(assay_date) %>%
+  summarise(n_samples = n())
+```
+
+#### Environment
+
+```{r, session_infos, eval=T}
+sessionInfo()
+```
