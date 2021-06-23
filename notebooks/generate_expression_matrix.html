@@ -11,7 +11,7 @@
 
 <meta name="author" content="Alexis Rapin" />
 
-<meta name="date" content="2021-06-03" />
+<meta name="date" content="2021-06-23" />
 
 <title>Generate expression matrix</title>
 
@@ -1635,7 +1635,7 @@ pre code {
 
 <h1 class="title toc-ignore">Generate expression matrix</h1>
 <h4 class="author">Alexis Rapin</h4>
-<h4 class="date">2021-06-03</h4>
+<h4 class="date">2021-06-23</h4>
 
 </div>
 
@@ -1665,7 +1665,7 @@ suppressMessages(library(GEOquery)); packageVersion(&quot;GEOquery&quot;)</code>
 run.id &lt;- &quot;R5652&quot;
 
 # Set the metadata file url based on GitLab v4 API (also specify the commit ID!)
-run.metadata.url &lt;- &quot;https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-knowledge-base/repository/files/data%2Fruns%2Fmicroarray_runs.txt/raw?ref=5709a4b7&quot;
+run.metadata.url &lt;- &quot;https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-knowledge-base/repository/files/data%2Fruns%2Fmicroarray_runs.txt/raw?ref=613ba382&quot;
 
 # Source project&#39;s library
 source(here(&quot;lib/lib.R&quot;))</code></pre>
@@ -1683,17 +1683,38 @@ source(here(&quot;lib/lib.R&quot;))</code></pre>
   gather</code></pre>
 <div data-pagedtable="false">
 <script data-pagedtable-source type="application/json">
-{"columns":[{"label":["key"],"name":[1],"type":["chr"],"align":["left"]},{"label":["value"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"data_type","2":"Gene expression"},{"1":"technology","2":"Microarray"},{"1":"technology_ontology","2":"microarray"},{"1":"technology_ontology_REF","2":"http://purl.obolibrary.org/obo/OBI_0400147"},{"1":"platform_name","2":"Affymetrix Mouse Transcriptome Array 1.0"},{"1":"platform_id","2":"GPL20258"},{"1":"run_id","2":"R5652"},{"1":"platform_support_files_misc","2":"http://media.affymetrix.com/analysis/downloads/lf/xta/MTA-1_0"},{"1":"platform_support_files_transcript_annotations","2":"https://sec-assets.thermofisher.com/TFS-Assets/LSG/Support-Files/MTA-1_0.r3.na36.mm10.a1.transcript.csv.zip"},{"1":"platform_support_files_probeset_annotations","2":"https://sec-assets.thermofisher.com/TFS-Assets/LSG/Support-Files/MTA-1_0-na36-mm10-probeset-csv.zip"},{"1":"data_source_private","2":""},{"1":"data_source_private_matrix_no_mask","2":"https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-gene-expression-scwat-microarray-r5652/repository/files/data%2Fmatrix%2Fgc-sst-rma-sketch.summary.txt/raw?ref=master"},{"1":"data_source_private_matrix_mask","2":""},{"1":"run_samples_source_private","2":"https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-knowledge-base/repository/files/data%2Fsamples%2Fgene_expression_scWAT_microarray_R5652_run_samples.txt/raw?ref=master"},{"1":"run_protocols_source_private","2":"https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-knowledge-base/repository/files/data%2Fprotocols%2Fmicroarray_runs_protocols.txt/raw?ref=master"},{"1":"data_source_public_database_name","2":"GEO"},{"1":"data_source_public_database_doi","2":"10.25504/FAIRsharing.5hc8vt"},{"1":"data_source_public_accession","2":"GSE79016"},{"1":"publications_doi","2":"10.1016/j.cels.2018.05.009"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
+{"columns":[{"label":["key"],"name":[1],"type":["chr"],"align":["left"]},{"label":["value"],"name":[2],"type":["chr"],"align":["left"]}],"data":[{"1":"data_type","2":"Gene expression"},{"1":"technology","2":"Microarray"},{"1":"technology_ontology","2":"microarray"},{"1":"technology_ontology_REF","2":"http://purl.obolibrary.org/obo/OBI_0400147"},{"1":"platform_name","2":"Affymetrix Mouse Transcriptome Array 1.0"},{"1":"platform_id","2":"GPL20258"},{"1":"run_id","2":"R5652"},{"1":"platform_support_files_misc","2":"http://media.affymetrix.com/analysis/downloads/lf/xta/MTA-1_0"},{"1":"platform_support_files_transcript_annotations","2":"https://sec-assets.thermofisher.com/TFS-Assets/LSG/Support-Files/MTA-1_0.r3.na36.mm10.a1.transcript.csv.zip"},{"1":"platform_support_files_probeset_annotations","2":"https://sec-assets.thermofisher.com/TFS-Assets/LSG/Support-Files/MTA-1_0-na36-mm10-probeset-csv.zip"},{"1":"data_source_private","2":""},{"1":"data_source_private_matrix_no_mask","2":"https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-gene-expression-scwat-microarray-r5652/repository/files/data%2Fmatrix%2Fgc-sst-rma-sketch.summary.txt/raw?ref=master"},{"1":"data_source_private_matrix_mask","2":""},{"1":"run_samples_source_private","2":"https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-knowledge-base/repository/files/data%2Fsamples%2Fgene_expression_scWAT_microarray_R5652_run_samples.txt/raw?ref=master"},{"1":"run_samples_fields_description_source_private","2":"https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-knowledge-base/repository/files/data%2Fsamples%2Frun_samples_fields_description.txt/raw?ref=master"},{"1":"run_protocols_source_private","2":"https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-knowledge-base/repository/files/data%2Fprotocols%2Fmicroarray_runs_protocols.txt/raw?ref=master"},{"1":"data_source_public_database_name","2":"GEO"},{"1":"data_source_public_database_doi","2":"10.25504/FAIRsharing.5hc8vt"},{"1":"data_source_public_accession","2":"GSE79016"},{"1":"publications_doi","2":"10.1016/j.cels.2018.05.009"},{"1":"code_release_archive_general_doi","2":"10.5281/zenodo.4899690"},{"1":"code_release_archive_version_doi","2":"v1.1.1:10.5281/zenodo.4899691"},{"1":"code_release_archive_url","2":"https://github.com/auwerxlab/bxd-fasted-gene-expression-scwat-microarray-r5652"},{"1":"code_url","2":"https://sv-renku-git.epfl.ch/lisp/bxd-fasted-gene-expression-scwat-microarray-r5652"}],"options":{"columns":{"min":{},"max":[10]},"rows":{"min":[10],"max":[10]},"pages":{}}}
   </script>
 </div>
-<p>Also download the run samples metadata</p>
-<pre class="r"><code>sample.metdata.url &lt;- read.table(here(&quot;data/microarray_runs.txt&quot;), sep =&quot;\t&quot;, header = 1) %&gt;%
+<p>Also download the run samples metadata and their fields description</p>
+<pre class="r"><code># Download samples metadata
+sample.metadata.url &lt;- read.table(here(&quot;data/microarray_runs.txt&quot;), sep =&quot;\t&quot;, header = 1) %&gt;%
   filter(run_id == run.id) %&gt;%
   select(run_samples_source_private)
 system(paste0(&quot;wget&quot;,
              &quot; --header=&#39;PRIVATE-TOKEN:&quot;, readLines(&quot;/tmp/gitlab_token.txt&quot;), &quot;&#39;&quot;,
-             &quot; &#39;&quot;, sample.metdata.url, &quot;&#39;&quot;,
-             &quot; -O &quot;, here(&#39;data/run_samples.txt&#39;)))</code></pre>
+             &quot; &#39;&quot;, sample.metadata.url, &quot;&#39;&quot;,
+             &quot; -O &quot;, here(&#39;data/run_samples.txt&#39;)))
+
+# Download samples metadata fields descriptions
+sample.metadata.fields.description.url &lt;- read.table(here(&quot;data/microarray_runs.txt&quot;), sep =&quot;\t&quot;, header = 1) %&gt;%
+  filter(run_id == run.id) %&gt;%
+  select(run_samples_fields_description_source_private)
+system(paste0(&quot;wget&quot;,
+             &quot; --header=&#39;PRIVATE-TOKEN:&quot;, readLines(&quot;/tmp/gitlab_token.txt&quot;), &quot;&#39;&quot;,
+             &quot; &#39;&quot;, sample.metadata.fields.description.url, &quot;&#39;&quot;,
+             &quot; -O &quot;, here(&#39;data/run_samples_fields_description.txt&#39;)))
+
+# Filter out fields descriptions not present in samples metadata
+read.table(here(&#39;data/run_samples_fields_description.txt&#39;),
+           sep = &quot;\t&quot;, header = 1) %&gt;%
+  filter(name %in% (read.table(here(&#39;data/run_samples.txt&#39;),
+           sep = &quot;\t&quot;, header = 1) %&gt;%
+           names %&gt;%
+  str_replace(&quot;\\.\\.&quot;, &quot;: &quot;) %&gt;%
+  str_replace(&quot;\\.&quot;, &quot; &quot;))) %&gt;%
+  write.table(here(&#39;data/run_samples_fields_description.txt&#39;),
+              sep = &quot;\t&quot;, quote = F)</code></pre>
 </div>
 <div id="download-microarray-platform-files-needed-to-compute-expression-values" class="section level2">
 <h2>Download microarray platform files needed to compute expression values</h2>

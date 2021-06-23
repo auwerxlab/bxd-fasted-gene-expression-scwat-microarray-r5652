@@ -28,7 +28,7 @@ suppressMessages(library(affyio)); packageVersion("affyio")
 run.id <- "R5652"
 
 # Set the metadata file url based on GitLab v4 API (also specify the commit ID!)
-run.metadata.url <- "https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-knowledge-base/repository/files/data%2Fruns%2Fmicroarray_runs.txt/raw?ref=5709a4b7"
+run.metadata.url <- "https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-knowledge-base/repository/files/data%2Fruns%2Fmicroarray_runs.txt/raw?ref=613ba382"
 
 # Source project's library
 source(here("lib/lib.R"))
@@ -52,15 +52,36 @@ read.table(here("data/microarray_runs.txt"), sep ="\t", header = 1) %>%
   gather
 ```
 
-Also download the run samples metadata
+Also download the run samples metadata and their fields description
 ```{r download_samples_metadata, eval=F}
-sample.metdata.url <- read.table(here("data/microarray_runs.txt"), sep ="\t", header = 1) %>%
+# Download samples metadata
+sample.metadata.url <- read.table(here("data/microarray_runs.txt"), sep ="\t", header = 1) %>%
   filter(run_id == run.id) %>%
   select(run_samples_source_private)
 system(paste0("wget",
              " --header='PRIVATE-TOKEN:", readLines("/tmp/gitlab_token.txt"), "'",
-             " '", sample.metdata.url, "'",
+             " '", sample.metadata.url, "'",
              " -O ", here('data/run_samples.txt')))
+
+# Download samples metadata fields descriptions
+sample.metadata.fields.description.url <- read.table(here("data/microarray_runs.txt"), sep ="\t", header = 1) %>%
+  filter(run_id == run.id) %>%
+  select(run_samples_fields_description_source_private)
+system(paste0("wget",
+             " --header='PRIVATE-TOKEN:", readLines("/tmp/gitlab_token.txt"), "'",
+             " '", sample.metadata.fields.description.url, "'",
+             " -O ", here('data/run_samples_fields_description.txt')))
+
+# Filter out fields descriptions not present in samples metadata
+read.table(here('data/run_samples_fields_description.txt'),
+           sep = "\t", header = 1) %>%
+  filter(name %in% (read.table(here('data/run_samples.txt'),
+           sep = "\t", header = 1) %>%
+           names %>%
+  str_replace("\\.\\.", ": ") %>%
+  str_replace("\\.", " "))) %>%
+  write.table(here('data/run_samples_fields_description.txt'),
+              sep = "\t", quote = F)
 ```
 
 ## Download microarray platform files needed to compute expression values

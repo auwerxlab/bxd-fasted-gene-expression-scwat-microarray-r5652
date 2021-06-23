@@ -12,9 +12,18 @@ This is a Renku project, see https://renku.readthedocs.io for details.
 
 ## Description
 
-This R project generates expression matrices for microarray assays estimating genes expression in subcutaneous adipose tissue samples collected on the BXD mouse genetic diversity model.
+This R project generates an expression matrix for microarray assays estimating genes expression in subcutaneous adipose tissue samples collected on the BXD mouse genetic diversity model.
 
-Microarray assays intensities CEL files are downloaded from public sources (Gene Expression Omnibus) and are processed into expression matrices using the Array Power Tool (APT) suite. All the processing is done within R notebooks located in the ``notebooks/`` directory.
+Microarray assays intensities CEL files are downloaded from public sources (Gene Expression Omnibus) and are processed into an expression matrix using the Array Power Tool (APT) suite. All the processing is done within R notebooks located in the ``notebooks/`` directory.
+
+## Data reuse
+
+All that is needed for further gene expression analysis:
+
+- Expression matrix: ``data/matrix/gc-sst-rma-sketch.summary.txt``
+  - Computation method description: ``data/matrix/gc-sst-rma-sketch.method_description.txt``
+- Metadata for samples included in expression matrix: ``data/run_samples.txt``
+  - Metadata fields description: ``data/run_samples_fields_description.txt``
 
 ## Ressources
 
@@ -32,10 +41,12 @@ If it is private, you would need a valid Gitlab token. Contact the authors if ne
 $ git clone https://< gitlab_token_name >:< gitlab_token >@sv-renku-git.epfl.ch/lisp/bxd-fasted-gene-expression-scwat-microarray-r5652.git
 ```
 
-You can get an archive of this project from https://github.com.
+You can get an **archive** of this project from https://github.com.
 ```
 $ git clone https://github.com/auwerxlab/bxd-fasted-gene-expression-scwat-microarray-r5652.git
 ```
+
+And from Zenodo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.4899690.svg)](https://doi.org/10.5281/zenodo.4899690)
 
 ## Requirements
 
@@ -48,28 +59,20 @@ $ git clone https://github.com/auwerxlab/bxd-fasted-gene-expression-scwat-microa
 - A table of microarrays runs, in tab-delimited text format (included in the associated study knowledge base at https://sv-renku-git.epfl.ch/lisp/bxd-fasted-knowledge-base).
 See table below for format:
 
-| Description                                                   | Format                                  | Example                                                                                                        | Requirement |
-|---------------------------------------------------------------|-----------------------------------------|----------------------------------------------------------------------------------------------------------------|-------------|
-| Data type                                                     | Free text                               | Gene expression                                                                                                | Optional    |
-| Assay technology                                              | Free text                               | microarray                                                                                                     | Optional    |
-| Assay technology                                              | http://purl.obolibrary.org/obo/obi.owl  | microarray                                                                                                     | Desired     |
-| http://purl.obolibrary.org/obo/obi.owl                        | URL                                     | http://purl.obolibrary.org/obo/OBI_0400147                                                                     | Optional    |
-| Platform name                                                 | Free text                               | Affymetrix Mouse Gene 1.0 ST Array                                                                             | Required    |
-| Platform accession number                                     | GEO accession number (GPLxxxx)          | GPL6246                                                                                                        | Required    |
-| Unique run ID                                                 | Free text                               | R1234                                                                                                          | Required    |
-| Platform manufacturer provided support files                  | URL                                     | http://media.affymetrix.com/analysis/downloads/lf/wt/                                                          | Required    |
-| Platform manufacturer provided probesets annotation file      | URL                                     | https://sec-assets.thermofisher.com/TFS-Assets/LSG/Support-Files/MoGene-1_0-st-v1-na36-mm10-transcript-csv.zip | Optional    |
-| Platform manufacturer provided probesets annotation file      | URL                                     | https://sec-assets.thermofisher.com/TFS-Assets/LSG/Support-Files/MoGene-1_0-st-v1-na36-mm10-probeset-csv.zip   | Optional    |
-| Run CEL files private location                                | Directory URL                           | https://< server_name >:< path/to/run/data >/                                                                  | Optional    |
-| Location of run expression matrix                             | File URL                                | https://< server_name >:< path/to/run/data >/                                                                  | Optional    |
-| Location of run expression matrix computed with probe masking | File URL                                | https://< server_name >:< path/to/run/data >/                                                                  | Optional    |
-| Run samples metadata table                                    | File URL                                | https://< server_name >:< path/to/run/metadata_file.txt >                                                      | Required    |
-| Run protocols description table                               | File URL                                | https://< server_name >:< path/to/run/metadata_file.txt >                                                      | Desired     |
-| Public run data database name                                 | Short name, see https://fairsharing.org | GEO                                                                                                            | Desired     |
-| Public run data database DOI                                  | DOI, see https://fairsharing.org        | 10.25504/FAIRsharing.5hc8vt                                                                                    | Desired     |
-| Public run data accession number                              | Accession number                        | GSE60149                                                                                                       | Required    |
-| DOI of associated publications                                | DOI                                     | 10.1126/science.aad0189                                                                                        | Desired     |
-| Any additional field                                          |                                         |                                                                                                                | Optional    |
+| name                                          | description                                  | format                                  | example                                                   | requirement |
+|-----------------------------------------------|----------------------------------------------|-----------------------------------------|-----------------------------------------------------------|-------------|
+| technology                                    | Assay technology                             | Free text                               | microarray                                                | Desired     |
+| platform_name                                 | Platform name                                | Free text                               | Affymetrix Mouse Gene 1.0 ST Array                        | Required    |
+| platform_id                                   | Platform accession number                    | GEO accession number (GPLxxxx)          | GPL6246                                                   | Required    |
+| run_id                                        | Unique run ID                                | Free text                               | R1234                                                     | Required    |
+| platform_support_files_misc                   | Platform manufacturer provided support files | URL                                     | http://media.affymetrix.com/analysis/downloads/lf/wt/     | Required    |
+| run_samples_source_private                    | Run samples metadata table                   | File URL                                | https://< server_name >:< path/to/run/metadata_file.txt > | Required    |
+| run_samples_fields_description_source_private | Run samples metadata fields description      | File URL                                | https://< server_name >:< path/to/run/metadata_file.txt > | Required    |
+| run_protocols_source_private                  | Run protocols description table              | File URL                                | https://< server_name >:< path/to/run/metadata_file.txt > | Desired     |
+| data_source_public_database_name              | Public run data database name                | Short name, see https://fairsharing.org | GEO                                                       | Desired     |
+| data_source_public_database_doi               | Public run data database DOI                 | DOI, see https://fairsharing.org        | 10.25504/FAIRsharing.5hc8vt                               | Desired     |
+| data_source_public_accession                  | Public run data accession number             | Accession number                        | GSE60149                                                  | Required    |
+| < additional_fields >                         | Any additional field                         |                                         |                                                           | Optional    |
 
 (Table created with https://www.tablesgenerator.com)
 

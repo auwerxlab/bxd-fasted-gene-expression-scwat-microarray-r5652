@@ -1,0 +1,34 @@
+name	description	format	example
+1	sample_ID_EPFL	Sample unique ID at EPFL	Free text	sample10
+2	Sample name	Sample name	Free text	sample10
+3	title	Sample title	Free text	C57BL/6J-liver-CD
+4	CEL file	Sample CEL file	File name	sample10_CD_liver.CEL.gz
+5	source name	Sample source short description	Free text	liver, chow diet
+6	organism	Organism of origin	Organism scientific name	Mus musculus
+7	characteristics: organism_NCBI_txid	Organism of origin	NCBI taxon ID	10090
+8	characteristics: strain	Strain name	Free text	C57BL/6J
+9	characteristics: genotype_qc	Genotype QC result. pass: strain is correctly assigned, fail: strain is incorrectly assigned, warning: see notes	pass|fail|warning	pass
+10	characteristics: sex	Animal sex	male|female	male
+11	characteristics: age	Animal age at sampling time	<int> weeks	29 weeks
+12	characteristics: diet_ID	Diet ID	Free text	CD
+13	characteristics: diet_description	Diet description	Free text	chow diet
+14	characteristics: dietary_intervention	Dietary intervention description	Free text	Mice were fed a chow diet (CD) ad libitum through their entire life.
+15	characteristics: diet_composition	Diet composition	Free text	fat: 6% kCal, protein: 20% kCal, carbohydrates: 74% kCal
+16	characteristics: diet_REF	Diet manufacturer reference	Free text	Harlan, 2018, Indianapolis, IN, USA
+17	characteristics: tissue	Tissue of origin	MA ontology term (http://purl.obolibrary.org/obo/ma.owl)	liver
+18	characteristics: tissue_REF	MA ontology term IRI	URL	http://purl.obolibrary.org/obo/MA_0000358
+19	characteristics: assay_date	Date of the assay	ISO:8601	2016-01-26
+20	characteristics: notes	Notes	Free text	Genotype QC based on RNAseq revealed DBA/2J_HFD_0137 genotype is close to BXD61 and may have been mislabeled as DBA/2J
+21	characteristics: geo_accession	GEO accession number	GSMXXXXXXX	GSM1234567
+22	characteristics: tissue_sample_ID	Unique ID of the tissue or animal of origin	Comma-delimited list of IDs	BXD43_CD_221,BXD43_CD_221,BXD43_CD_223
+23	characteristics: mean_extracted_RNA_concentration_before pooling	Mean extracted RNA concentration before pooling	Number	200
+24	characteristics: mean_extracted_RNA_concentration_before pooling_unit	Mean extracted RNA concentration before pooling unit	Concentration unit	ng/uL
+25	characteristics: mean_nanodrop_260_280_ratio_before_pooling	Mean nanodrop 260 280 ratio before pooling	Number	2
+26	characteristics: mean_nanodrop_260_230_ratio_before_pooling	Mean nanodrop 260 230 ratio before pooling	Number	2.2
+27	platform	Platform GEO accession number	GPLXXXXX	GPL20258
+28	molecule	Type of molecule that was extracted from the biological material	total RNA|polyA RNA|cytoplasmic RNA|nuclear RNA|genomic DNA|protein|other	total RNA
+29	label	Compound used to label the extract	Free text	biotin
+30	description	Additional information not provided in the other fields, or paste in broad descriptions that cannot be easily dissected into the other fields.	Free text	Gene expression data from pooled RNA extract of liver samples collected on 29 weeks old male C57BL6/J mice fed on chow diet
+31	solvent	RNA sample solvent	Free text	water
+32	platform_name	Microarray platform name	GEO platform title	Affymetrix Clariom S Assay, Mouse
+33	data	Sample data location	URL	https://<server_address>:</path/to/sample_file.CEL>
