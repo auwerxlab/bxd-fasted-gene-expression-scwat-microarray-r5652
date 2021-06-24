@@ -11,7 +11,7 @@
 
 <meta name="author" content="Alexis Rapin" />
 
-<meta name="date" content="2021-06-23" />
+<meta name="date" content="2021-06-24" />
 
 <title>Generate expression matrix</title>
 
@@ -1635,7 +1635,7 @@ pre code {
 
 <h1 class="title toc-ignore">Generate expression matrix</h1>
 <h4 class="author">Alexis Rapin</h4>
-<h4 class="date">2021-06-23</h4>
+<h4 class="date">2021-06-24</h4>
 
 </div>
 
@@ -1665,7 +1665,7 @@ suppressMessages(library(GEOquery)); packageVersion(&quot;GEOquery&quot;)</code>
 run.id &lt;- &quot;R5652&quot;
 
 # Set the metadata file url based on GitLab v4 API (also specify the commit ID!)
-run.metadata.url &lt;- &quot;https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-knowledge-base/repository/files/data%2Fruns%2Fmicroarray_runs.txt/raw?ref=613ba382&quot;
+run.metadata.url &lt;- &quot;https://sv-renku-git.epfl.ch/api/v4/projects/lisp%2Fbxd-fasted-knowledge-base/repository/files/data%2Fruns%2Fmicroarray_runs.txt/raw?ref=5016f653&quot;
 
 # Source project&#39;s library
 source(here(&quot;lib/lib.R&quot;))</code></pre>
@@ -1703,10 +1703,10 @@ sample.metadata.fields.description.url &lt;- read.table(here(&quot;data/microarr
 system(paste0(&quot;wget&quot;,
              &quot; --header=&#39;PRIVATE-TOKEN:&quot;, readLines(&quot;/tmp/gitlab_token.txt&quot;), &quot;&#39;&quot;,
              &quot; &#39;&quot;, sample.metadata.fields.description.url, &quot;&#39;&quot;,
-             &quot; -O &quot;, here(&#39;data/run_samples_fields_description.txt&#39;)))
+             &quot; -O /tmp/run_samples_fields_description.txt&quot;))
 
 # Filter out fields descriptions not present in samples metadata
-read.table(here(&#39;data/run_samples_fields_description.txt&#39;),
+read.table(&#39;/tmp/run_samples_fields_description.txt&#39;,
            sep = &quot;\t&quot;, header = 1) %&gt;%
   filter(name %in% (read.table(here(&#39;data/run_samples.txt&#39;),
            sep = &quot;\t&quot;, header = 1) %&gt;%
@@ -1714,7 +1714,7 @@ read.table(here(&#39;data/run_samples_fields_description.txt&#39;),
   str_replace(&quot;\\.\\.&quot;, &quot;: &quot;) %&gt;%
   str_replace(&quot;\\.&quot;, &quot; &quot;))) %&gt;%
   write.table(here(&#39;data/run_samples_fields_description.txt&#39;),
-              sep = &quot;\t&quot;, quote = F)</code></pre>
+              sep = &quot;\t&quot;, quote = F, row.names = F)</code></pre>
 </div>
 <div id="download-microarray-platform-files-needed-to-compute-expression-values" class="section level2">
 <h2>Download microarray platform files needed to compute expression values</h2>
